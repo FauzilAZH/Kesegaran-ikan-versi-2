@@ -478,7 +478,7 @@ if uploaded_file is not None:
 
     with col1:
         st.markdown('<div class="section-title">Gambar Input</div>', unsafe_allow_html=True)
-        st.image(image, use_container_width=True)
+        st.image(image, width='stretch')
 
     # Load model & predict
     with st.spinner("Menganalisis gambar..."):
