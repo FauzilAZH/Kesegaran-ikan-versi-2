@@ -64,7 +64,7 @@ def predict(model, image_tensor, device):
 # PAGE CONFIG
 # ============================================
 st.set_page_config(
-    page_title="FreshCatch AI - Klasifikasi Kesegaran Ikan",
+    page_title="FreshKan - Klasifikasi Kesegaran Ikan",
     page_icon="🐟",
     layout="centered"
 )
@@ -410,7 +410,7 @@ st.markdown("""
 st.markdown("""
 <div class="hero-container">
     <div class="hero-badge">Deep Learning Powered</div>
-    <div class="hero-title">FreshCatch AI</div>
+    <div class="hero-title">FreshKan</div>
     <div class="hero-divider"></div>
     <div class="hero-subtitle">
         Sistem klasifikasi kesegaran ikan berbasis citra mata ikan menggunakan arsitektur MobileNetV2
@@ -423,7 +423,7 @@ st.markdown("""
 # SIDEBAR
 # ============================================
 with st.sidebar:
-    st.markdown('<div class="sidebar-title">FreshCatch AI</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-title">FreshKan</div>', unsafe_allow_html=True)
     st.markdown(
         "Sistem cerdas untuk mengklasifikasikan tingkat kesegaran ikan "
         "berdasarkan **citra mata ikan** menggunakan model Deep Learning "
@@ -478,7 +478,7 @@ if uploaded_file is not None:
 
     with col1:
         st.markdown('<div class="section-title">Gambar Input</div>', unsafe_allow_html=True)
-        st.image(image, width='stretch')
+        st.image(image, width="stretch")
 
     # Load model & predict
     with st.spinner("Menganalisis gambar..."):
@@ -488,7 +488,7 @@ if uploaded_file is not None:
 
     info = CLASS_INFO[predicted_class]
 
-        with col2:
+    with col2:
         st.markdown('<div class="section-title">Hasil Analisis</div>', unsafe_allow_html=True)
 
         # Determine status badge colors
@@ -563,8 +563,3 @@ else:
 st.markdown("""<div class="app-footer">
     FreshKan &mdash; Sistem Klasifikasi Kesegaran Ikan &bull; Powered by MobileNetV2 &amp; PyTorch
 </div>""", unsafe_allow_html=True)
-
-
-    
-
- 
