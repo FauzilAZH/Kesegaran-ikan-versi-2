@@ -488,7 +488,7 @@ if uploaded_file is not None:
 
     info = CLASS_INFO[predicted_class]
 
-    with col2:
+        with col2:
         st.markdown('<div class="section-title">Hasil Analisis</div>', unsafe_allow_html=True)
 
         # Determine status badge colors
@@ -508,18 +508,16 @@ if uploaded_file is not None:
             badge_text = "#f39c12"
             bar_gradient = "linear-gradient(90deg, #f39c12, #e67e22)"
 
-        st.markdown(f"""
-        <div class="result-card" style="border-color: {badge_border};">
-            <div class="result-card" style="border:none; padding:0; background:none; backdrop-filter:none;">
-                <div class="result-label">Klasifikasi</div>
-                <div class="result-class" style="color: {badge_text};">{predicted_class}</div>
-                <div class="result-confidence" style="color: #ffffff;">{confidence:.1f}%</div>
-                <div class="result-status" style="background: {badge_bg}; border: 1px solid {badge_border}; color: {badge_text};">
-                    {info['status']}
-                </div>
-            </div>
+        st.markdown(f"""<div class="result-card" style="border-color: {badge_border};">
+    <div class="result-card" style="border:none; padding:0; background:none; backdrop-filter:none;">
+        <div class="result-label">Klasifikasi</div>
+        <div class="result-class" style="color: {badge_text};">{predicted_class}</div>
+        <div class="result-confidence" style="color: #ffffff;">{confidence:.1f}%</div>
+        <div class="result-status" style="background: {badge_bg}; border: 1px solid {badge_border}; color: {badge_text};">
+            {info['status']}
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+</div>""", unsafe_allow_html=True)
 
     # ===== PROBABILITY SECTION =====
     st.markdown("")
@@ -537,38 +535,36 @@ if uploaded_file is not None:
         else:
             fill_gradient = f"linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08))"
 
-        prob_html += f"""
-        <div class="prob-container">
-            <div class="prob-header">
-                <span class="prob-name">{cls_name}</span>
-                <span class="prob-value" style="color: {color};">{prob:.2f}%</span>
-            </div>
-            <div class="prob-track">
-                <div class="prob-fill" style="width: {prob}%; background: {fill_gradient};"></div>
-            </div>
-        </div>
-        """
-
-    st.markdown(f"""
-    <div class="glass-card">
-        {prob_html}
+        prob_html += f"""<div class="prob-container">
+    <div class="prob-header">
+        <span class="prob-name">{cls_name}</span>
+        <span class="prob-value" style="color: {color};">{prob:.2f}%</span>
     </div>
-    """, unsafe_allow_html=True)
+    <div class="prob-track">
+        <div class="prob-fill" style="width: {prob}%; background: {fill_gradient};"></div>
+    </div>
+</div>
+"""
+
+    st.markdown(f"""<div class="glass-card">
+{prob_html}
+</div>""", unsafe_allow_html=True)
 
 else:
-    st.markdown("""
-    <div class="upload-prompt">
-        <div class="upload-prompt-icon">&#9650;</div>
-        <div>Silakan unggah gambar mata ikan di atas untuk memulai analisis kesegaran.</div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="upload-prompt">
+    <div class="upload-prompt-icon">&#9650;</div>
+    <div>Silakan unggah gambar mata ikan di atas untuk memulai analisis kesegaran.</div>
+</div>""", unsafe_allow_html=True)
 
 
 # ============================================
 # FOOTER
 # ============================================
-st.markdown("""
-<div class="app-footer">
-    FreshCatch AI &mdash; Sistem Klasifikasi Kesegaran Ikan &bull; Powered by MobileNetV2 &amp; PyTorch
-</div>
-""", unsafe_allow_html=True)
+st.markdown("""<div class="app-footer">
+    FreshKan &mdash; Sistem Klasifikasi Kesegaran Ikan &bull; Powered by MobileNetV2 &amp; PyTorch
+</div>""", unsafe_allow_html=True)
+
+
+    
+
+ 
